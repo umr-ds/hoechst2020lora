@@ -1,0 +1,14 @@
+gfx/.ipynb_checkpoints/
+main.aux
+main.bcf
+main.log
+main.out
+main.pdf
+main.run.xml
+eval/.ipynb_checkpoints/
+eval/geckodriver.log
+main.fls
+main.bbl
+main.blg
+main.fdb_latexmk
+main.dvi

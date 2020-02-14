@@ -1,0 +1,50 @@
+\section{Introduction}
+\label{sec:intro}
+
+% Where are we right now with infrastructure independent communication?
+The communication technologies developed and deployed in the last decades are integral parts of our daily life and are used by mobile phones, computers, or smart applications in homes and cities.
+Today's smartphones, however, highly depend on the availability of telecommunication infrastructures, such as Wi-Fi or cellular technology (e.g., 3G, LTE, or the upcoming 5G standard).
+However, there are situations in which either no communication infrastructure is available or only at a high cost, e.g., in remote areas~(\cite{gardner2011serval}), in the agricultural sector~(\cite{elijah2018overview}), as a result of disasters~(\cite{manoj2007communication}), or due to political censorship~(\cite{liu2015performance}).
+Furthermore, in countries with less evolved infrastructures, e.g., due to low population densities or due to economic reasons, cellular networks often cannot be used at all or cannot be established in an economically feasible manner. In this case,
+low-cost communication technologies would give people the possibility to communicate with each other~(\cite{kayisire2016ict}).
+However, while modern infrastructure-independent technologies do exist, these are often only accessible to advanced users due to regulations, high costs, or technical complexity.
+To make these technologies accessible to a broad user base, they need to be integrated into devices already known to users.
+
+% Short LoRa Intro
+We propose to use LoRa 
+wireless technology as a communication enabler in such situations.
+LoRa (\emph{Lo}ng-\emph{Ra}nge) is a
+long range and low power network protocol designed for the Internet of Things to support low data rate applications~(\cite{hornbuckle2010fractional}). 
+It consists of a proprietary physical layer, using the Chirp Spread Spectrum (CSS) in the freely usable ISM bands at 433, 868, or 915 MHz, depending on the global region.
+The additional MAC layer protocol LoRaWAN is designed as a hierarchical topology. 
+A set of gateways is receiving and forwarding messages of end devices to a central server that processes the data.
+While LoRa itself has to be licensed by the Semtech company and implemented in specific hardware, it is independent of LoRaWAN and can thus be used in a device-to-device manner.
+
+% Our contributions
+In this paper, we present an approach to equip existing mobile devices with LoRa technology, by distributing small System-on-a-Chip (SoC) devices supporting multiple Radio Access Technologies (RATs). 
+There are several commercially off-the-shelf microcontroller units (MCUs) available supporting Wi-Fi, Bluetooth, and LoRa.
+We propose to use these low-cost devices to upgrade existing smartphones, laptops, and other mobile devices for long range infrastructure-less communication.
+To reach this goal, we present a custom firmware for Arduino-SDK compatible boards, called \textit{rf95modem}.
+Existing mobile devices can be connected to a board through a serial connection, Wi-Fi, or Bluetooth. 
+As a general solution, we propose to use modem AT commands as an interface for application software. 
+This interface can then be exposed through different communication channels and used by application software without requiring LoRa specific device drivers. 
+Since these boards are cheap and do not require laying new cables or setting up communication towers, these boards can either be distributed to people living in high-risk areas beforehand or handed out by first responders during the event of a crisis.
+
+To demonstrate the functionality of our implementation, we first present a cross-platform mobile application for device-to-device messaging. This re-enables basic infrastructure-less communication capabilities in disasters.
+Second, we present an integration of our implementation into a disruption-tolerant networking (DTN) software.
+Although the low data rates of LoRa are not sufficient to support multimedia applications, sensor data, e.g., in agricultural applications or environmental monitoring, as well as context information for further DTN routing decisions can be transmitted through the LoRa channel.
+To illustrate the benefits of our approach,  the developed device-to-device messaging app, as well as our DTN integration are tested through experimental evaluations in an urban and a rural area. 
+
+To summarize, we make the following contributions:
+\begin{itemize}
+    \item We present a novel free and open source modem firmware implementation for LoRa-enabled MCUs, featuring a device-driver independent way of using LoRa via serial, Bluetooth LE, and Wi-Fi interfaces.
+    \item We present a novel device-to-device LoRa chat application for a) Android and iOS smartphones and b) traditional computers.
+    \item We present a freely available and open source integration of long range communication into a delay-tolerant networking software.
+    \item We experimentally evaluate the proposed approach by conducting field tests in an urban environment as well as in a rural area and performing energy measurements of multiple devices.
+    \item The presented \textit{rf95modem} software\footnote{\url{https://github.com/gh0st42/rf95modem/}, MIT License}, 
+    the device-to-device chat application\footnote{\url{https://github.com/umr-ds/BlueRa}, MIT License}, 
+    the integration into DTN7\footnote{\url{https://github.com/dtn7/dtn7-go}, GNU General Public License v3.0} and 
+    the experimental evaluation code fragments\footnote{\url{https://github.com/umr-ds/hoechst2020lora}} 
+    are freely available.
+\end{itemize}
+

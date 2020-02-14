@@ -1,0 +1,47 @@
+\section{Related Work}
+\label{sec:relwork}
+
+\cite{augustin2016study} experimentally evaluated the foundations of LoRa. 
+The authors built a LoRa testbed and conducted different tests including receiver sensitivity and network coverage.
+LoRa's Chirp Spread Spectrum (CSS) modulation technique allows to decode received signals from -120 to -125 dBm, depending on the spreading factor (SF). 
+The network coverage was examined in a suburb of Paris using SFs of 7, 9, and 12, based on different test locations.
+With SF7 and SF9, distances of 2.3 km were reached with less than 50\% packet loss. Using SF12, the packet delivery ratio at the highest distance of 3.4 km was 38\%.
+
+\cite{bor2016lora} investigated the current LoRaWAN protocol and proposed an alternative MAC layer to be used with LoRa, making use of multi-hop communication. 
+\cite{wixted2016evaluation} evaluated the properties of LoRaWAN for wireless sensor networks, demonstrating reliable usage of LoRa up to 2.2 km in an urban scenario.
+
+\cite{baumgartner2018environmental} proposed to use LoRa for environmental monitoring.
+In the included LoRa evaluation, ranges of 4.6 to 6.5 km with the base station placed on a high building were achieved depending on the antenna and the frequencies in use.
+Furthermore, the concept of a unified radio firmware was introduced, but only limited functionality was implemented and evaluated.
+
+Long range peer-to-peer links were investigated by \cite{callebaut2019lora}. 
+The authors showed experimentally that with an increased SF the Received Signal Strength (RSS) did not change but the Signal to Noise Ratio (SNR) was increased, proving the better decoding ability.
+Distances of up to 4 km in a line-of-sight and 1 km in a forested terrain were achieved.
+
+
+\cite{deepak2019OverviewPostDisasterEC} created an overview of wireless technologies for post-disaster emergency communication.
+They identified three disaster network scenarios: congested network, partial network, and isolated network.
+In isolated networks, the user devices have to deploy a new network to provide temporal wireless coverage.
+This could be achieved with drone-assisted communication or mobile ad-hoc networks (MANETs).
+The advantage of the latter is high redundancy: a failure of individual nodes is not necessarily mission-critical.
+
+
+\cite{lieser2017architecture} analyzed multiple disaster scenarios to highlight the main communication issues that occurred.
+The depicted scenarios are based on unavailable or broken communication infrastructures.
+In particular, the authors proposed an architecture that incorporates delay-tolerant MANETs to be independent of any fixed infrastructure.
+Additionally, the authors focused on communication tools that ordinary civilians can use, since civilians typically do not possess their own dedicated communication facilities, in contrast to disaster relief organizations.
+
+
+By analyzing 49 crisis technology articles that focus on mobile apps in disaster situations, \cite{tan2017appsCrisisInformatics} illustrated that disaster communication is shifting away from authority-centric approaches towards approaches that integrate and engage the public.
+The authors argued that supporting on-site collaboration (e.g., by chatting) is the main purpose of mobile apps for disaster situations.
+
+According to \cite{kaufhold2018socialapp}, the widespread use of smartphones provides opportunities for bidirectional communication between authorities and citizens.
+The authors developed the app \emph{112.social} for communication between authorities and citizens during emergencies.
+The authors argued that further research in the area of infrastructure-less technologies for emergency communication apps is required to provide new opportunities.
+
+\cite{Sciullo2018locate} presented an infrastructure-less solution for emergency communication by combining LoRa modules with smartphones.
+In their approach, the LoRa transceiver was hooked directly to the smartphone via USB to achieve higher communication ranges compared to conventional wireless transmission technologies (e.g., Wi-Fi).
+Thus, only Android devices work with this approach, and the solution is tightly coupled to the emergency communication app provided by the authors. 
+\cite{Olteanu2013zigbee} used an USB dongle to access ZigBee nodes through an Android app. 
+These USB connected devices were later also identified by \cite{SCIULLO2020locate} as being problematic and tackled through the addition of an extra Bluetooth bridge. 
+This setup is still tailored to the provided emergency application of the authors and has higher complexity, bill of materials, and energy consumption compared to our approach. 
