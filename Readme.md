@@ -20,7 +20,7 @@ The jupyter notebook can be [viewed online](https://nbviewer.jupyter.org/github/
 If you use the data in this repository for your publications, please consider citing our paper:
 
 ```bibtex
-@inproceedings{hoechst2020lorabased,
+@inproceedings{hoechst2020lora,
   author = {{Höchst}, Jonas and {Baumgärtner}, Lars and Kuntke, Franz and Penning, Alvar and Sterz, Artur and Freisleben, Bernd},
   title = {{LoRa-based Device-to-Device Smartphone Communication for Crisis Scenarios}},
   booktitle = {{17th International Conference on Information Systems for Crisis Response and Management (ISCRAM 2020) [accepted for publication]}},
