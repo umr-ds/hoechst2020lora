@@ -62,12 +62,15 @@ By analyzing the logs of the smartphone applications that transmit GPS locations
 
 \begin{table}[ht!]
     \centering
-    \begin{tabular}{l|lr}
-\textbf{Scenario}    & \textbf{Mode}          & \textbf{Maximum Distance} \\\hline
-City        & (a) Medium Range  &  1.09 km \\
-            & (b) Long Range    &  2.89 km \\
-Rural Area  & (a) Medium Range  &  1.31 km \\
-            & (b) Long Range   &  1.64 km \\
+    \begin{tabular}{llr}
+        \toprule
+        \textbf{Scenario}    & \textbf{Mode}          & \textbf{Maximum Distance} \\
+        \midrule
+        City        & (a) Medium Range  &  1.09 km \\
+        & (b) Long Range    &  2.89 km \\
+        Rural Area  & (a) Medium Range  &  1.31 km \\
+        & (b) Long Range   &  1.64 km \\
+        \bottomrule
     \end{tabular}
     \caption{Maximum distances achieved in the different areas and tested LoRa profiles in the conducted experiments.}
     \label{tab:max_dist}
@@ -173,19 +176,22 @@ From these measurements, the required battery capacities can be inferred.
     \centering
     \footnotesize
     \begin{tabularx}{\textwidth}{Xlllll}
-    \textbf{Board}             & \textbf{Receiving} & \textbf{Sending} & \textbf{Deep Sleep} & \textbf{Additional Features} & \textbf{Price} \\ \hline
-    TTGO T-Fox 27 dB           & 392 mW          & 1,771 mW      & 61 mW            & WiFi, BLE, OLED, RTC & ~20 €         \\
-    TTGO T-Fox 20 dB           & 400 mW          & 902 mW        & 61 mW            & WiFi, BLE, OLED, RTC & ~20 €         \\
-    TTGO LORA ESP32            & 404 mW          & 782 mW        & 68 mW            & WiFi, BLE & ~15 €                   \\
-    TTGO LORA32 V2.0           & 393 mW          & 689 mW        & 57 mW            & WiFi, BLE, OLED, SD & ~20 €         \\
-    TTGO LORA32 V2.1\_1.6      & 387 mW          & 785 mW        & 57 mW            & WiFi, BLE, OLED, SD & ~20  €          \\
-    Heltec Wireless Stick      & 391 mW          & 923 mW        & 76 mW            & WiFi, BLE, OLED  & ~12  €            \\
-    Adafruit Feather 32u4 LoRa & 72 mW           & 648 mW        & 49 mW            & -   & ~35  €                           \\
-    Adafruit Feather M0 LoRa   & 95 mW           & 697 mW        & \textless 1 mW   & -    & ~35  €                          \\
-    TTGO T-Beam v0.7           & 723 mW          & 1,125 mW      & 393 mW           & WiFi, BLE, GPS  & ~20  €             
-    \end{tabularx}
-    \caption{Energy consumption in receiving, sending, and deep sleep modes of \textit{rf95modem} compatible boards.}
-    \label{tab:energy}
+        \toprule
+        \textbf{Board}             & \textbf{Receiving} & \textbf{Sending} & \textbf{Deep Sleep} & \textbf{Additional Features} & \textbf{Price} \\
+        \midrule
+        TTGO T-Fox 27 dB           & 392 mW          & 1,771 mW      & 61 mW            & WiFi, BLE, OLED, RTC & ~20 €         \\
+        TTGO T-Fox 20 dB           & 400 mW          & 902 mW        & 61 mW            & WiFi, BLE, OLED, RTC & ~20 €         \\
+        TTGO LORA ESP32            & 404 mW          & 782 mW        & 68 mW            & WiFi, BLE & ~15 €                   \\
+        TTGO LORA32 V2.0           & 393 mW          & 689 mW        & 57 mW            & WiFi, BLE, OLED, SD & ~20 €         \\
+        TTGO LORA32 V2.1\_1.6      & 387 mW          & 785 mW        & 57 mW            & WiFi, BLE, OLED, SD & ~20  €          \\
+        Heltec Wireless Stick      & 391 mW          & 923 mW        & 76 mW            & WiFi, BLE, OLED  & ~12  €            \\
+        Adafruit Feather 32u4 LoRa & 72 mW           & 648 mW        & 49 mW            & -   & ~35  €                           \\
+        Adafruit Feather M0 LoRa   & 95 mW           & 697 mW        & \textless 1 mW   & -    & ~35  €                          \\
+        TTGO T-Beam v0.7           & 723 mW          & 1,125 mW      & 393 mW           & WiFi, BLE, GPS  & ~20  €             \\
+        \bottomrule
+\end{tabularx}
+\caption{Energy consumption in receiving, sending, and deep sleep modes of \textit{rf95modem} compatible boards.}
+\label{tab:energy}
 \end{table}
 %
 
