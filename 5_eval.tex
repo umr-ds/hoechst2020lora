@@ -1,5 +1,5 @@
 \section{Experimental Evaluation}
-\label{sec:eval}
+\label{hoechst2020lora:sec:eval}
 
 In this section, LoRa protocol properties are discussed, and the presented implementations are evaluated through experiments.
 
@@ -11,10 +11,10 @@ To understand the limitations of LoRa communication, some application-oriented e
     \centering
     \includegraphics[width=.8\columnwidth]{gfx/lora-airtime.pdf}
     \caption{Exemplary packet airtime in different LoRa profiles.}
-    \label{fig:lora-airtime}
+    \label{hoechst2020lora:fig:lora-airtime}
 \end{figure}
 
-Figure~\ref{fig:lora-airtime} shows the payload sizes compared to the airtime required for sending with different spreading factors (SF), where the coding rate is set to 4/5.
+Figure~\ref{hoechst2020lora:fig:lora-airtime} shows the payload sizes compared to the airtime required for sending with different spreading factors (SF), where the coding rate is set to 4/5.
 The presented SF and channel bandwidth examples are taken from the EU standards (\cite{alliance2016lorawan}).
 The message length of LoRa is limited depending on the SF to limit the airtime each individual message requires. 
 The highest SFs are limited to a payload of 51 bytes. Using SF9, the payload can can go up to 115 bytes, and in the fastest SFs 8 and 7, messages can contain up to 222 bytes. 
@@ -37,7 +37,7 @@ The expectations of the tests in the rural areas therefore differ, since regions
 
 For the conducted tests, we used one fixed and one mobile station. 
 The fixed station consists of a laptop logging the incoming messages. 
-Figure~\ref{fig:evalsetup1} shows the mobile station, consisting of a smartphone in combination with a Heltec Wireless Stick driven by a Powerbank.
+Figure~\ref{hoechst2020lora:fig:evalsetup1} shows the mobile station, consisting of a smartphone in combination with a Heltec Wireless Stick driven by a Powerbank.
 The default antenna was replaced by a +3dBi model, connected via SubMiniature version A (SMA).
 The antennas of each station were 1.5 meter above the ground, in order to model realistic usage in device-to-device scenarios.
 
@@ -45,7 +45,7 @@ The antennas of each station were 1.5 meter above the ground, in order to model 
     \centering
     \includegraphics[width=.7\textwidth]{gfx/bluera-package.jpg}
     \caption{Mobile station: smartphone, power bank, and Heltec wireless stick.}
-    \label{fig:evalsetup1}
+    \label{hoechst2020lora:fig:evalsetup1}
 \end{figure}
 
 First, we selected one exemplary region for each of our two considered scenarios. 
@@ -73,10 +73,10 @@ By analyzing the logs of the smartphone applications that transmit GPS locations
         \bottomrule
     \end{tabular}
     \caption{Maximum distances achieved in the different areas and tested LoRa profiles in the conducted experiments.}
-    \label{tab:max_dist}
+    \label{hoechst2020lora:tab:max_dist}
 \end{table}
 
-Table~\ref{tab:max_dist} shows the maximum distances of the conducted tests.
+Table~\ref{hoechst2020lora:tab:max_dist} shows the maximum distances of the conducted tests.
 For the Medium Range configuration, 1.09 km in the city area and 1.31 km in the rural area could be achieved.
 With the rather high data rate of 5.47 kbps, the mode is a good choice in dense areas, where a larger amount of messages might occur, and airtime is limited.
 In the Long Range profile, 1.64 km could be achieved in the rural area, while in the city scenario, some messages could be transmitted from 2.89 km range.
@@ -85,10 +85,10 @@ In the Long Range profile, 1.64 km could be achieved in the rural area, while in
     \centering
     \includegraphics[width=\textwidth]{gfx/city.png}
     \caption{Successful LoRa transmissions in the city area.}
-    \label{fig:eval_city_new}
+    \label{hoechst2020lora:fig:eval_city_new}
 \end{figure}
 
-Figure~\ref{fig:eval_city_new} shows the results of the conducted tests in the city area.
+Figure~\ref{hoechst2020lora:fig:eval_city_new} shows the results of the conducted tests in the city area.
 The orange dots denote the Medium Range profile, while the red dots show the successful transmissions in the Long Range profile.
 In the size of the markers, the Received Signal Strength Indicator (RSSI) is visualized. The larger the marker, the better the RSSI is. 
 Note that in LoRa a higher SF enables a higher chance of successful decoding under worse RSSI values.
@@ -101,10 +101,10 @@ When moving behind a hill, such as in the western or eastern parts of the presen
     \centering
     \includegraphics[width=\textwidth]{gfx/rural.png}
     \caption{Geo-positions of successful LoRa transmissions in a rural area.}
-    \label{fig:eval_rural_new}
+    \label{hoechst2020lora:fig:eval_rural_new}
 \end{figure}
 
-In Figure~\ref{fig:eval_rural_new}, the successful LoRa transmission of the rural area are presented.
+In Figure~\ref{hoechst2020lora:fig:eval_rural_new}, the successful LoRa transmission of the rural area are presented.
 As excepted, the transmission range in the forested area is worse compared to the unforested area.
 In the presented example, the northern part of the map consists of a forested area, while the southern part is mostly not forested.
 From the plot, it can be observed that in the non-forested valley area, RSSI is high, and all LoRa messages are successfully transmitted in both modes. 
@@ -115,10 +115,10 @@ In Long Range mode, transmission in forested places improves and messages are su
     \centering
     \includegraphics[width=.8\textwidth]{gfx/rssi-distance.pdf}
     \caption{Received Signal Strength Indicator in relation to transmission distance in the proposed device-to-device scenario.}
-    \label{fig:eval_rssi}
+    \label{hoechst2020lora:fig:eval_rssi}
 \end{figure}
 
-In Figure~\ref{fig:eval_rssi}, the observed RSSI values in relation to the distances are presented.
+In Figure~\ref{hoechst2020lora:fig:eval_rssi}, the observed RSSI values in relation to the distances are presented.
 With the Long Range profile, signals with RSSI values of up to -140 dBm can be decoded successfully, while in the Medium Range profile the limit is around -130 dBm.
 
 In general, this shows that LoRa is a viable option to enable device-to-device communication in crisis scenarios, where infrastructure is destroyed or temporarily not available.
@@ -142,11 +142,11 @@ The LoRa maximum payload can be up to 251 bytes in size, as instructed by \texti
     \centering
     \includegraphics[width=\columnwidth]{gfx/dtn7-bbc-eval.pdf}
     \caption{Total transmission size and amount of fragments for different payloads.}
-    \label{fig:dtn7_bbc_eval}
+    \label{hoechst2020lora:fig:dtn7_bbc_eval}
 \end{figure}
 
 The overhead of a DTN bundle is 77 bytes without compression.
-In Figure~\ref{fig:dtn7_bbc_eval}, the final transmission size and the number of required fragments are shown for the two characteristics of the payload data and its size.
+In Figure~\ref{hoechst2020lora:fig:dtn7_bbc_eval}, the final transmission size and the number of required fragments are shown for the two characteristics of the payload data and its size.
 It is noticeable that for a random payload the transmission size is slightly larger.
 However, the number of fragments is almost always the same.
 Furthermore, user data is usually not randomly distributed.
@@ -191,13 +191,13 @@ From these measurements, the required battery capacities can be inferred.
         \bottomrule
 \end{tabularx}
 \caption{Energy consumption in receiving, sending, and deep sleep modes of \textit{rf95modem} compatible boards.}
-\label{tab:energy}
+\label{hoechst2020lora:tab:energy}
 \end{table}
 %
 
 The energy consumption was measured using an ODROID Smart Power Meter\footnote{\url{https://www.hardkernel.com/shop/smart-power/}} connected to the microUSB connector of the board and supplied 5 V.
 
-In Table~\ref{tab:energy}, the average energy consumption of the listed boards is presented. 
+In Table~\ref{hoechst2020lora:tab:energy}, the average energy consumption of the listed boards is presented. 
 Since the boards need to be online to receive messages from other boards, the receiving mode has the highest impact on energy consumption.
 
 The power consumption of the measured boards when receiving data shows a broad variance, e.g., from about 72 mW for the Adafruit Feather 32u4 LoRa board up to 723 mW for the TTGO T-Beam v0.7 board.

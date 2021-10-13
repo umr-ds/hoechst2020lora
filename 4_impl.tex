@@ -1,5 +1,5 @@
 \section{Implementation}
-\label{sec:impl}
+\label{hoechst2020lora:sec:impl}
 
 In this section, the implementations of the \textit{rf95modem} firmware, the device-to-device messaging application, and the integration into disruption-tolerant networking software are presented.
 
@@ -9,11 +9,11 @@ In this section, the implementations of the \textit{rf95modem} firmware, the dev
     \centering
     \includegraphics[width=.5\columnwidth]{gfx/rf95modem-arch.pdf}
     \caption{Overview of the \textit{rf95modem} architecture.}
-    \label{fig:rf95modem_arch}
+    \label{hoechst2020lora:fig:rf95modem_arch}
 \end{figure}
 
 Since a \textit{rf95modem} should be controlled by AT commands over all of its available connection mechanisms, handling such commands is an essential part of the implementation. 
-Therefore, this functionality is shared across all supported hardware platforms and connection mechanisms, as shown in Figure~\ref{fig:rf95modem_arch}. 
+Therefore, this functionality is shared across all supported hardware platforms and connection mechanisms, as shown in Figure~\ref{hoechst2020lora:fig:rf95modem_arch}. 
 Here, the software components are displayed in blue while the rest represents the underlying hardware modules.
 For interaction with users and software, the serial device interface, usually accessible via USB, is always active. 
 Furthermore, the in-/output functions may also be hooked to the Bluetooth Low Energy or WiFi modules we developed, if enabled at compile time. 
@@ -50,22 +50,22 @@ The firmware is completely written in C/C++ using the Arduino SDK and PlatformIO
   \centering
   \includegraphics[width=.99\linewidth]{gfx/lorachat_1.png}
   \caption{Login screen}
-  \label{fig:lorachat:login}
+  \label{hoechst2020lora:fig:lorachat:login}
 \end{subfigure}%
 \begin{subfigure}{.48\textwidth}
   \centering
   \includegraphics[width=.99\linewidth]{gfx/lorachat_2.png}
   \caption{Chat interface}
-  \label{fig:lorachat:chat}
+  \label{hoechst2020lora:fig:lorachat:chat}
 \end{subfigure}
 \caption{Console-based \textit{rf95modem} LoRa chat example.}
-\label{fig:lorachat}
+\label{hoechst2020lora:fig:lorachat}
 \end{figure}
 
 
 \subsection{A Device-To-Device Messaging Application}
 To satisfy the requirements of the messaging application, we provide two different approaches.
-First, we provide a console-based user interface for traditional computers, as shown in Figure~\ref{fig:lorachat}\footnote{\url{https://github.com/gh0st42/rf95modem-rs}}.
+First, we provide a console-based user interface for traditional computers, as shown in Figure~\ref{hoechst2020lora:fig:lorachat}\footnote{\url{https://github.com/gh0st42/rf95modem-rs}}.
 Second, for the mobile version of the application (BlueRa), we used the Flutter UI toolkit\footnote{\url{https://flutter.dev}}.
 Flutter allows developers to create platform independent apps for both major mobile operating systems, iOS and Android, using the same code base.
 
@@ -73,10 +73,10 @@ Flutter allows developers to create platform independent apps for both major mob
     \centering
     \includegraphics[width=.8\columnwidth]{gfx/bluera-uml.pdf}
     \caption{Overview of the components of the app.}
-    \label{fig:app_uml}
+    \label{hoechst2020lora:fig:app_uml}
 \end{figure}
 
-Figure~\ref{fig:app_uml} gives a simplified overview of the components of the app.
+Figure~\ref{hoechst2020lora:fig:app_uml} gives a simplified overview of the components of the app.
 The top block shows the UI classes.
 The application starts at the home screen, which contains a path to the settings, a list view of the available channels and a path for joining to new channels or to create channels.
 On the left, users can change their usernames or manage the app's Bluetooth connection, each in their own screens (the username settings screen is not shown in the figure).
@@ -88,13 +88,13 @@ The final screen is the chat screen itself, where the user can see a history of 
     \centering
     \includegraphics[width=0.4\textwidth]{gfx/bluera-screenshot.png}
     \caption{Screenshot of the chat screen for the announcements channel.}
-    \label{fig:app_screenshot}
+    \label{hoechst2020lora:fig:app_screenshot}
 \end{figure}
 
-Figure~\ref{fig:app_screenshot} shows the chat screen for the announcements channel.
+Figure~\ref{hoechst2020lora:fig:app_screenshot} shows the chat screen for the announcements channel.
 Using this common chat UI/UX, the user gets a familiar look and can start messaging immediately, without the need of getting familiar with a special UI.
 
-As indicated by the \emph{Channel} module in Figure~\ref{fig:app_uml}, a channel has a name, an indicator whether the local user has joined this channel and a list of messages.
+As indicated by the \emph{Channel} module in Figure~\ref{hoechst2020lora:fig:app_uml}, a channel has a name, an indicator whether the local user has joined this channel and a list of messages.
 A message, on the other hand, contains the name of the user who sent this message, a timestamp, the text itself, the channel name and an indicator whether the message was sent from the local user.
 
 The connection to the \textit{rf95modem} device is implemented in its own module, \emph{RF95Connector}.
@@ -126,12 +126,12 @@ Furthermore, status information of the modem can be read and reconfigured.
     \centering
     \includegraphics[width=1.0\columnwidth]{gfx/dtn7-bbc.pdf}
     \caption{Simplified implementation model of the Bundle Broadcasting Connector.}
-    \label{fig:dtn7_bbc_uml}
+    \label{hoechst2020lora:fig:dtn7_bbc_uml}
 \end{figure}
 
 Until now, DTN7 only had support for unicast convergence layers, while the transmission of LoRa packets corresponds to a broadcast.
 Since most broadcast technologies are similar in structure, we first developed a generic broadcasting convergence layer, the Bundle Broadcasting Connector (BBC).
-Its simplified implementation model is shown in Figure~\ref{fig:dtn7_bbc_uml}.
+Its simplified implementation model is shown in Figure~\ref{hoechst2020lora:fig:dtn7_bbc_uml}.
 
 The main component of the BBC package is the connector that implements DTN7's convergence layer interfaces for both sending and receiving bundles.
 The connector itself communicates with a modem, which is an interface implemented in \textit{rf95modem-go} and a mock object for testing.
@@ -150,7 +150,7 @@ This is then handed to the modem, which broadcasts it via LoRa in our case.
 \begin{figure}[ht!]
     \centering
     
-    \begin{bytefield}[bitformatting={\small\bfseries},bitwidth=0.05\linewidth]{8}
+    \begin{bytefield}[bitformatting={\small\bfseries},bitwidth=0.08\linewidth]{8}
         \bitheader{0-7} \\
         
         \begin{rightwordgroup}{Header}
@@ -164,10 +164,10 @@ This is then handed to the modem, which broadcasts it via LoRa in our case.
     \end{bytefield}
     
     \caption{Protocol specification of a fragment.}
-    \label{fig:fragment_protocol}
+    \label{hoechst2020lora:fig:fragment_protocol}
 \end{figure}
 
-The network protocol specification of a fragment is shown in Figure~\ref{fig:fragment_protocol}.
+The network protocol specification of a fragment is shown in Figure~\ref{hoechst2020lora:fig:fragment_protocol}.
 A fragment itself consist of a header of two bytes, followed by the payload.
 In the header, the identifier of the transmission is referenced next to a sequence number.
 Each fragment contains the incremented sequence number of its predecessor.

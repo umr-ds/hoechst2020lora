@@ -1,5 +1,5 @@
 \section{Design}
-\label{sec:design}
+\label{hoechst2020lora:sec:design}
 
 In this section, the design goals of the proposed approach are discussed.
 First, general principles of using LoRa on smartphones are covered.
@@ -19,11 +19,11 @@ In the following, we present a modem firmware, called \textit{rf95modem},  for L
     \centering
     \includegraphics[width=.6\columnwidth]{gfx/rf95modem-connections.pdf}
     \caption{ESP32-based modem board and its connection options for smartphones, single-board computers, and laptops.}
-    \label{fig:rf95modem}
+    \label{hoechst2020lora:fig:rf95modem}
 \end{figure}
 
 \subsection{Modem Firmware}
-Figure~\ref{fig:rf95modem} shows how different devices can be connected to a modem board. 
+Figure~\ref{hoechst2020lora:fig:rf95modem} shows how different devices can be connected to a modem board. 
 There are several commercial off-the-shelf micro-controller boards available that include a LoRa transceiver and thus can be used for the proposed functionality.
 With our approach, we aim to support the majority of these boards by providing a hardware abstraction layer across all of them.
 Thus, the provided implementation supports a wide variety of available boards, e.g., 
